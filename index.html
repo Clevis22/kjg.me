@@ -3,46 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kjg.me</title>
+    <title>Kieran Gannon - Cybersecurity Student</title>
     <style>
+        /* Previous styles remain the same until projects section */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            margin: 40px;
-            
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
-        h1, h2 {
-            margin-bottom: 20px;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
         }
 
-        ul {
-            margin-bottom: 40px;
+        h2 {
+            font-size: 1.75rem;
+            margin: 2rem 0 1rem;
+            color: #444;
         }
 
-        a {
+        p {
+            margin-bottom: 1rem;
+            max-width: 65ch;
+        }
+
+        .header {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav {
+            position: static;
+            top: 2rem;
+            right: 2rem;
+            text-align:right;
+        }
+
+        .nav a {
+            margin-left: 1.5rem;
             text-decoration: none;
-            
+            color: #555;
+            transition: color 0.2s;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .nav a:hover {
+            color: green;
+        }
+
+        .section {
+            margin: 4rem 0;
+            scroll-margin-top: 2rem;
+        }
+
+        /* New minimal project styles */
+        .projects-list {
+            margin-top: 2rem;
+            max-width: 65ch;
+        }
+
+        .project {
+            margin-bottom: 2.5rem;
+        }
+
+        .project h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .project p {
+            color: #666;
+        }
+
+        /* Contact form styles remain the same */
+        .contact-form {
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button {
+            background: #1a4b8c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #2961b3;
         }
     </style>
 </head>
 <body>
-    <h1>Services</h1>
-    <ul>
-        <li><a href="https://searx.kjg.me"">Searxng</a></li>
-        <li><a href="https://ipconfig.tech">ipconfig.tech (different domain but hosted by me)</a></li>
-    </ul>
+    <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <h2>About</h2>
-    <p>
-      Hey, I'm Kieran, and this is my little site where I host some stuff. Im in the process of adding more, but feel free to use, just please be kind to the server :)
-    </p>
+    <header class="header">
+        <h1>Kieran Gannon</h1>
+        <p>Cybersecurity Student at Mount St. Mary's University</p>
+    </header>
 
-    <h2>Donate</h2>
-    <p>Donations are greatly appreciated but never expected. If you use these services and want to help keep the lights on, feel free to donate Monero to this address. 4AuvFRMXKSBbrma6vsRovTRUSf3H3f5Zf41VyJwg5gjbd2qiryH6BXe38DSVPkL4uNJr3RstK2jPkaJFZmtyJ7fVPPCNnja
-    </p>
-  
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p>Hi, I'm Kieran. I'm pursuing my education in cybersecurity at Mount St. Mary's University in Maryland. I'm passionate about digital security and through my education and personal projects I am developing valuable skills in the cybersecurity and web development fields.</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project">
+                <h3>Personaldata.info</h3>
+                <p><a href="https://personaldata.info">Personaldata.info</a> is a website that shows users what information their device is exposing to the web. It uses JavaScript APIs as well as a Flask backend to gather as much information as possible about the user such as browser type and features, network information and device details.</p>
+                <p>The goal of Personaldata.info was to further enhance my programming skills while raising awareness about browser fingerprinting. Currently the project is considered finished and is only updated when bugs are found.</p>
+            </div>
+            <div class="project">
+                <h3>SplitMark</h3>
+                <p><a href="https://splitmark.kjg.me">SplitMark</a> is an online open source minimalist markdown powered text editor. The editor allows the user to enter markdown and converts it in real time as you write. This eliminates the need for distracting menus while still providing a powerful rich text environment.</p>
+            </div>
+            <div class="project">
+                <h3>StegZero</h3>
+                <p><a href="https://stegzero.com">StegZero</a> is an open source online tool that hides messages in plain text using zero width character steganography. The project is still actively being developed.</p>
+                <p>StegZero works by first converting the secret message to binary format, then it is split into 6-bit chunks. Zero-width characters are used to represent the binary values: zero-width space (\u200b) for '0' and zero-width non-joiner (\u200c) for '1'. These invisible characters are then embedded into regular text to hide the message.</p>
+            </div>
+            <div class="project">
+                <h3>WebCrypt</h3>
+                <p><a href="https://clevis22.github.io/WebCrypt/">WebCrypt</a> is an open source client-side file encryption webapp that utilizes the Web Crypto API to provide secure encryption and decryption of files using a private key. The application is built with JavaScript and runs entirely in the user's browser, ensuring that sensitive data never leaves the client-side.
+                </p> <p>WebCrypt uses the AES-GCM (Advanced Encryption Standard - Galois/Counter Mode) encryption algorithm, which is a widely-used and secure symmetric-key cryptographic algorithm. The key used for encryption is derived from the user-provided private key using the PBKDF2 (Password-Based Key Derivation Function 2) algorithm with a random salt and 100,000 iterations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="section">
+        <h2>Tools</h2>
+        <p>Aside from my personal projects I also host a variety of open source free-to-use tools.</p>
+        <ul>
+            <li><a href="https://searx.kjg.me">SearXNG</a> - A free internet metasearch engine which aggregates results from various search services and databases.</li>
+            <li><a href="https://hatsh.personaldata.info">Hat.sh</a> - A free opensource web app that provides secure file encryption in the browser</li>
+        </ul>
+    </section>
 </body>
 </html>
